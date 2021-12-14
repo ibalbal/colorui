@@ -29,8 +29,10 @@
 		},
 		methods: {
 			login(){
-				getopenid('orDYt4z8eYj92qVcXUCgJT0Brdao').then(resp=>{
+				getopenid({url:'http://ibalbal.com'}).then(resp=>{
 					console.log("resp",resp.data)
+				}).catch(e=>{
+					console.log(e)
 				})
 				// console.log("login")
 				// let userinfo = {

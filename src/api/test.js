@@ -1,8 +1,9 @@
 import request from "../http/request";
 
-export const getopenid = (openid)=>{
+export const getopenid = (params)=>{
     return request({
-        url: '/douyin/wxMiniIbalbalUser/'+openid,
-        method: 'get'
+        url: '/test',
+        method: 'post',
+        data: params
     })
 }

@@ -6,19 +6,17 @@ import store  from "./store";
 let url;
 //自动切换环境
 if(process.env.NODE_ENV === 'development'){
-    url = 'https://pi.ibalbal.com:800'
+    url = 'http://localhost:4000'
 }else{
     url = 'https://pi.ibalbal.com:800'
 }
 
 const request = axios.create({
-    baseURL: url,
-    timeout: 6000
+    baseURL: url
 });
 
 request.defaults.adapter = adapter
-request.defaults.retry = 5; // 设置请求次数
-request.defaults.retryDelay = 1000;// 重新请求时间间隔
+
 
 // 跨域请求，允许保存cookie
 request.defaults.withCredentials = true
@@ -43,8 +41,15 @@ request.interceptors.request.use(config => {
 
 // HTTP response拦截
 request.interceptors.response.use(res => {
+    //去除首位空格
+    res.errMsg = res.errMsg.trim();
+    //异常处理
+    if(res.errMsg.indexOf('request:fail') != -1 || res.errMsg.indexOf('request:fail timeout') != -1 ){
+        console.log("error")
+        return Promise.reject(errorCode[res.errMsg])
+    }
     const status = Number(res.status) || 200
-    const message = res.data.msg || errorCode[status] || errorCode['default']
+    const message = res.data.message || errorCode[status] || errorCode['default']
     if (status === 401) {
         // store.dispatch('FedLogOut').then(() => {
         //     router.push({path: '/login'})
@@ -52,7 +57,7 @@ request.interceptors.response.use(res => {
         return
     }
     if (status !== 200 || res.data.code === 1) {
-        return Promise.reject(new Error(error))
+        return Promise.reject(new Error(message))
     }
 
     return res
