@@ -1,13 +1,22 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+	<view>
+		<header-bar bgColor="bg-gradual-pink" isBack="true">
+			<view slot="backText">返回</view>
+			<view slot="content">导航栏</view>
+		</header-bar>
+		<view class="content">
+			<image class="logo" src="/static/logo.png"></image>
+			<view @click="login">
+				<text class="title">{{title}}</text>
+			</view>
+			<view class="iconfont icon-lastest_bills line-blue"></view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import store from "../../http/store";
+
 	export default {
 		data() {
 			return {
@@ -18,7 +27,17 @@
 
 		},
 		methods: {
-
+			login(){
+				console.log("login")
+				let userinfo = {
+					username: 'name',
+					password: 'password',
+					code: 'code',
+					randomStr:'rand'
+				};
+				console.log("start ---> userinfo",userinfo)
+				store.dispatch('LoginByUsername',userinfo)
+			}
 		}
 	}
 </script>
