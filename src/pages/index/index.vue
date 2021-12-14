@@ -16,6 +16,7 @@
 
 <script>
 	import store from "../../http/store";
+	import {getopenid} from "../../api/test";
 
 	export default {
 		data() {
@@ -28,15 +29,18 @@
 		},
 		methods: {
 			login(){
-				console.log("login")
-				let userinfo = {
-					username: 'name',
-					password: 'password',
-					code: 'code',
-					randomStr:'rand'
-				};
-				console.log("start ---> userinfo",userinfo)
-				store.dispatch('LoginByUsername',userinfo)
+				getopenid('orDYt4z8eYj92qVcXUCgJT0Brdao').then(resp=>{
+					console.log("resp",resp.data)
+				})
+				// console.log("login")
+				// let userinfo = {
+				// 	username: 'name',
+				// 	password: 'password',
+				// 	code: 'code',
+				// 	randomStr:'rand'
+				// };
+				// console.log("start ---> userinfo",userinfo)
+				// store.dispatch('LoginByUsername',userinfo)
 			}
 		}
 	}

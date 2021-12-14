@@ -3,8 +3,16 @@ import adapter from './lib/adapter'
 import errorCode from './errorCode'
 import store  from "./store";
 
+let url;
+//自动切换环境
+if(process.env.NODE_ENV === 'development'){
+    url = 'https://pi.ibalbal.com:800'
+}else{
+    url = 'https://pi.ibalbal.com:800'
+}
+
 const request = axios.create({
-    baseURL : 'http://localhost:8081',
+    baseURL: url,
     timeout: 6000
 });
 
@@ -17,7 +25,6 @@ request.defaults.withCredentials = true
 
 //http request拦截
 request.interceptors.request.use(config => {
-    console.log("--------------")
     const isToken = (config.headers || {}).isToken === false
     let token =  store.getters.access_token
     if (token && !isToken) {
@@ -28,7 +35,6 @@ request.interceptors.request.use(config => {
         config.data = serialize(config.data)
         delete config.data.serialize
     }
-    console.log("===============")
     return config
 }, error => {
     return Promise.reject(error)
@@ -37,8 +43,6 @@ request.interceptors.request.use(config => {
 
 // HTTP response拦截
 request.interceptors.response.use(res => {
-    console.log("-=-=-=-=-=-=-=-=")
-
     const status = Number(res.status) || 200
     const message = res.data.msg || errorCode[status] || errorCode['default']
     if (status === 401) {
@@ -48,12 +52,12 @@ request.interceptors.response.use(res => {
         return
     }
     if (status !== 200 || res.data.code === 1) {
-        return Promise.reject(error)
+        return Promise.reject(new Error(error))
     }
 
     return res
 }, error => {
-    return Promise.reject(error)
+    return Promise.reject(new Error(error))
 })
 
 export default request
