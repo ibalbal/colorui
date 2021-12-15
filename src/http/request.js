@@ -45,7 +45,11 @@ request.interceptors.response.use(res => {
     res.errMsg = res.errMsg.trim();
     //异常处理
     if(res.errMsg.indexOf('request:fail') != -1 || res.errMsg.indexOf('request:fail timeout') != -1 ){
-        console.log("error")
+        uni.showToast({
+            title: errorCode[res.errMsg],
+            duration: 3000,
+            icon: 'error'
+        })
         return Promise.reject(errorCode[res.errMsg])
     }
     const status = Number(res.status) || 200
