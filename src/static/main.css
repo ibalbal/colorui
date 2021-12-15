@@ -1,9 +1,9 @@
 /*
   ColorUi for uniApp  v2.1.6 | by 文晓港 2019-05-31 10:44:24
-  仅供学习交流，如作它用所承受的法律责任一概与作者无关  
-  
-  *使用ColorUi开发扩展与插件时，请注明基于ColorUi开发 
-  
+  仅供学习交流，如作它用所承受的法律责任一概与作者无关
+
+  *使用ColorUi开发扩展与插件时，请注明基于ColorUi开发
+
   （QQ交流群：240787041）
 */
 
@@ -133,8 +133,8 @@ switch.checked::before {
 /* #ifndef MP-ALIPAY */
 radio::before,
 checkbox::before {
-	font-family: "cuIcon";
-	content: "\e645";
+	font-family: "iconfont";
+	content: "\e742";
 	position: absolute;
 	color: #ffffff !important;
 	top: 50%;
@@ -3279,6 +3279,11 @@ scroll-view.cu-steps .cu-item {
 	padding-right: 50upx;
 }
 
+.padding-lr-xxl {
+	padding-left: 100upx;
+	padding-right: 100upx;
+}
+
 .padding-tb-xs {
 	padding-top: 10upx;
 	padding-bottom: 10upx;
@@ -3303,6 +3308,7 @@ scroll-view.cu-steps .cu-item {
 	padding-top: 50upx;
 	padding-bottom: 50upx;
 }
+
 
 /* -- 浮动 --  */
 
