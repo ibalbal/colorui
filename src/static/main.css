@@ -3408,6 +3408,10 @@ scroll-view.cu-steps .cu-item {
 .lines-white::after {
 	border-color: #ffffff;
 }
+.bg{
+	background-color: #464c5b;
+	color: #ffffff;
+}
 
 .bg-red {
 	background-color: #e54d42;

@@ -1,5 +1,5 @@
 <template>
-    <view>
+    <view class="bg-white">
         <view class="swiper-css zqui-rel" :style="{ height: hpx }">
             <swiper class="swiper" :style="{ height: hpx }" :indicator-dots="indicatorDots" :autoplay="autoplay"
                     :interval="interval" :duration="duration" @change="guideAction">
@@ -20,7 +20,7 @@
                 <button class="flex-column cu-btn footer" @click="launchApp">立即体验</button>
             </template>
             <!-- 右上角跳过按钮 -->
-            <view class="btn-box" @click="launchApp"><text class="passbtn">跳过</text></view>
+            <view v-if="cur != 2" class="btn-box" @click="launchApp"><text class="passbtn">跳过</text></view>
         </view>
     </view>
 </template>
@@ -32,10 +32,10 @@
                 //修改图片,文字描述
                 imageList: [
                     {
-                        src: 'http://www.ibalbal.com:9001/images/u7.jpg'
+                        src: 'http://www.ibalbal.com:9001/images/u2.jpg'
                     },
                     {
-                        src: 'http://www.ibalbal.com:9001/images/u8.jpg'
+                        src: 'http://www.ibalbal.com:9001/images/u5.jpg'
                     },
                     {
                         src: 'http://www.ibalbal.com:9001/images/u9.jpg'

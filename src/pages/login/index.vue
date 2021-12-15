@@ -1,10 +1,12 @@
 <template>
-    <view class="wh">
+    <view class="bg-white wh">
         <view class="form">
             <view class="padding-lr-xxl">
+<!--                logo-->
                 <view class="flex justify-center" style="margin-top: 100px">
                     <image class="logo" src="../../static/logo.svg"></image>
                 </view>
+<!--                title-->
                 <view class="flex justify-center title">
                     <text>贝业供应链</text>
                 </view>
@@ -17,12 +19,10 @@
             </view>
             <view>
                 <view class="padding-lr-xxl padding-bottom-lg">
-                    <view class="loginBtn">
-                        <text class="btnValue">登录</text>
-                    </view>
+                    <button class="cu-btn loginBtn bg-green shadow" @click="login">登录</button>
                 </view>
                 <view class="flex justify-center align-center padding-top-sm ">
-                    <checkbox style="transform:scale(0.6);" class='blue' :class="radio=='C'?'checked':''" :checked="radio=='C'?true:false" value="C"></checkbox>
+                    <checkbox style="transform:scale(0.6);" class='blue' :class="select?'checked':''" :checked="select" @click="select=!select"></checkbox>
                     <text>我已阅读并同意贝业供应链<text class="text-red">隐私政策</text>和<text class="text-red">服务协议</text></text>
                 </view>
             </view>
@@ -36,7 +36,24 @@
         name: "index",
         data(){
             return{
-                radio:'C'
+                select: false
+            }
+        },
+        methods:{
+            login(){
+                if(!this.select){
+                    uni.showToast({
+                        icon:'none',
+                        title: "请先勾选协议！"
+                    })
+                    return;
+                }
+                uni.switchTab({
+                    url: '/pages/index/home'
+                });
+                // uni.reLaunch({
+                //     url: '/pages/index/home'
+                // })
             }
         }
     }
@@ -90,13 +107,6 @@
         height: 80upx;
         background: #2ecc71;
         border-radius: 50upx;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
     }
-    .loginBtn .btnValue{
-        color: white;
-    }
+
 </style>

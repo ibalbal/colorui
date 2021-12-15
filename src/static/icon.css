@@ -24,9 +24,9 @@
 
 @font-face {
 	font-family: "iconfont"; /* Project id 2503789 */
-	src: url('//at.alicdn.com/t/font_2503789_6jt02kflw0j.woff2?t=1639551201755') format('woff2'),
-	url('//at.alicdn.com/t/font_2503789_6jt02kflw0j.woff?t=1639551201755') format('woff'),
-	url('//at.alicdn.com/t/font_2503789_6jt02kflw0j.ttf?t=1639551201755') format('truetype');
+	src: url('//at.alicdn.com/t/font_2503789_ezyubbfhgbk.woff2?t=1639554929236') format('woff2'),
+	url('//at.alicdn.com/t/font_2503789_ezyubbfhgbk.woff?t=1639554929236') format('woff'),
+	url('//at.alicdn.com/t/font_2503789_ezyubbfhgbk.ttf?t=1639554929236') format('truetype');
 }
 
 .iconfont {
@@ -37,14 +37,22 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-task-list:before {
+	content: "\e6d0";
+}
+
+.icon-my:before {
+	content: "\e78b";
+}
+
+.icon-home:before {
+	content: "\e7a7";
+}
+
 .icon-success:before {
 	content: "\e742";
 }
 
 .icon-lastest_bills:before {
 	content: "\e647";
-}
-
-.icon-home:before {
-	content: "\e68d";
 }

@@ -1,14 +1,10 @@
 <template>
-	<view>
-		<header-bar bgColor="bg-gradual-pink">
-			<view slot="content">首页</view>
+	<view class="bg-white">
+		<header-bar bgColor="bg-white">
+			<view slot="content">贝业供应链</view>
 		</header-bar>
-		<view class="content">
+		<view class="main">
 
-			<view @click="login">
-				<text class="title">{{title}}</text>
-			</view>
-			<view class="iconfont icon-lastest_bills line-blue"></view>
 		</view>
 	</view>
 </template>
@@ -20,11 +16,17 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
 			}
 		},
 		onLoad() {
 
+		},
+		computed:{
+			styleMainHeight(){
+				// return "height: calc(100vh - (100rpx + env(safe-area-inset-bottom) / 2) - " + this.CustomBar + "px)"
+				return "height: calc(100vh - " + this.CustomBar + "px)"
+			}
 		},
 		methods: {
 			login(){
@@ -48,26 +50,7 @@
 </script>
 
 <style>
-	.content {
+	.main{
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
 	}
 </style>

@@ -1,3 +1,4 @@
+<!--顶部导航栏-->
 <template>
 	<view>
 		<view class="cu-custom" :style="[{height:CustomBar + 'px'}]">
