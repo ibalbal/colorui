@@ -5,10 +5,7 @@
                 <text class="text-bold">贝业供应链</text>
             </view>
         </header-bar>
-        <main-content is-search="true">
-            <view slot="left">
-                <text class="iconfont icon-back" style="white-space:nowrap">返回</text>
-            </view>
+        <main-content is-search="true" is-back="true">
             <view slot="right">
                 <view class="cu-capsule">
                     <view v-show="false" class='cu-tag'/>
@@ -24,7 +21,7 @@
                 </view>
             </view>
             <view class="cu-card">
-                <view v-for="(item,index) in 10" :key="index" class="cu-item shadow-warp">
+                <navigator url="/pages/tasklist/details/index" hover-class="navigator-hover" v-for="(item,index) in 10" :key="index" class="cu-item shadow-warp">
                     <view class="flex  justify-around solid" style="background-color: #f2f2f2">
                         <view class="margin-left-sm">
                             <view class="cu-avatar round bg-white" style="border:1px solid #11cffe">
@@ -46,7 +43,7 @@
                             <view class="cu-tag round bg-green">待接单</view>
                         </view>
                     </view>
-                </view>
+                </navigator>
             </view>
         </main-content>
     </view>

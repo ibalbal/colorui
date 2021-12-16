@@ -1,14 +1,14 @@
 <!--主题内容-->
 <template>
     <view class="main" :style="styleMainHeight">
-        <view class="flex bg">
-            <view class="flex align-center justify-center flex-sub margin-xs">
-                <slot name="left"/>
+        <view class="flex bg hander">
+            <view class="flex flex-sub align-center justify-center flex-sub margin-xs">
+                <text v-if="isBack" @click="BackPage" class="iconfont icon-back" style="white-space:nowrap">返回</text>
             </view>
-            <view class="flex-sub align-center padding-sm margin-xs">
+            <view class="flex flex-twice align-center justify-center padding-sm margin-xs">
                 <slot name="content"/>
             </view>
-            <view class="flex flex-sub align-center margin-xs">
+            <view class="flex flex-sub align-center justify-center margin-xs">
                 <slot name="right"/>
             </view>
         </view>
@@ -24,7 +24,7 @@
 
 <script>
     export default {
-        props:['isSearch'],
+        props:['isSearch','isBack'],
         name: "mainContent",
         data(){
             return{
@@ -61,6 +61,8 @@
 
 <style scoped lang="scss">
 .main{
-
+    .hander{
+        height: 38px
+    }
 }
 </style>

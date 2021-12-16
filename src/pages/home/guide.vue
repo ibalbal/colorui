@@ -1,7 +1,7 @@
 <template>
     <view class="bg-white">
         <view class="swiper-css zqui-rel" :style="{ height: hpx }">
-            <swiper class="swiper" :style="{ height: hpx }" :indicator-dots="indicatorDots" :autoplay="autoplay"
+            <swiper class="swiper" :style="{ height: hpx }" :indicator-dots="indicatorDots" :autoplay="autoplay" easing-function="linear"
                     :interval="interval" :duration="duration" @change="guideAction">
                 <swiper-item class="flex1" v-for="(item, index) in imageList" :key="index">
                     <image class="flex-column image-size" mode="aspectFill" :src="item.src" />
