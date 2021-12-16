@@ -11,14 +11,14 @@
             if (value) {
                 // 如何已经有，直接去home首页
                 // uni.switchTab({
-                //     url: '/pages/index/home'
+                //     url: '/pages/home/index'
                 // });
                 uni.reLaunch({
-                    url: '/pages/login/index'
+                    url: '/pages/home/index'
                 })
             } else {
                 uni.redirectTo({
-                    url: '/pages/index/guide'
+                    url: '/pages/home/guide'
                 });
             }
         }

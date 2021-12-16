@@ -70,7 +70,7 @@
                 //     data: true,
                 //     success() {
                 //         uni.reLaunch({
-                //             url: '/pages/index/home'
+                //             url: '/pages/home/index'
                 //         })
                 //     }
                 // });

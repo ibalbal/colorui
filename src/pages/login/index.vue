@@ -49,10 +49,10 @@
                     return;
                 }
                 uni.switchTab({
-                    url: '/pages/index/home'
+                    url: '/pages/home/index'
                 });
                 // uni.reLaunch({
-                //     url: '/pages/index/home'
+                //     url: '/pages/home/index'
                 // })
             }
         }

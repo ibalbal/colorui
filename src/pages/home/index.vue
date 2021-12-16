@@ -1,11 +1,13 @@
 <template>
 	<view class="bg-white">
 		<header-bar bgColor="bg-white">
-			<view slot="content">贝业供应链</view>
+			<view slot="content">
+				<text class="text-bold">贝业供应链</text>
+			</view>
 		</header-bar>
-		<view class="main">
+		<main-content>
 
-		</view>
+		</main-content>
 	</view>
 </template>
 
@@ -23,10 +25,7 @@
 
 		},
 		computed:{
-			styleMainHeight(){
-				// return "height: calc(100vh - (100rpx + env(safe-area-inset-bottom) / 2) - " + this.CustomBar + "px)"
-				return "height: calc(100vh - " + this.CustomBar + "px)"
-			}
+
 		},
 		methods: {
 			login(){
@@ -49,8 +48,6 @@
 	}
 </script>
 
-<style>
-	.main{
-		display: flex;
-	}
+<style lang="scss">
+
 </style>

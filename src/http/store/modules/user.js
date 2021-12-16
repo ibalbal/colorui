@@ -17,7 +17,7 @@ import {getUserInfo, loginByUsername, logout, refreshToken} from '../../../api/l
 //   const isChild = ele[propsDefault.children] && ele[propsDefault.children].length !== 0
 //   if (!isChild) ele[propsDefault.children] = []
 //   if (!isChild && first && !isURL(ele[propsDefault.path])) {
-//     ele[propsDefault.path] = ele[propsDefault.path] + '/index'
+//     ele[propsDefault.path] = ele[propsDefault.path] + '/home'
 //   } else {
 //     ele[propsDefault.children].forEach(child => {
 //       addPath(child)
