@@ -23,7 +23,7 @@
                             @onChoose="onChoose"
                     />
                 </view>
-                <view class="flex justify-center margin-bottom-lg">
+                <view style="height: 100%"  class="flex justify-center margin-bottom-lg">
                     <button @click="goPage" class="cu-btn bg-green padding-tb-lg padding-lr-xxl">完工</button>
                 </view>
             </view>

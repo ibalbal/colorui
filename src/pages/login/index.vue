@@ -8,7 +8,7 @@
                 </view>
 <!--                title-->
                 <view class="flex justify-center title">
-                    <text>贝业供应链</text>
+                    <text >贝业供应链</text>
                 </view>
                 <view class="inputWrapper" style="margin-top: 50px">
                     <input class="input" type="text" value="" placeholder="手机号"/>

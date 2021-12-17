@@ -18,10 +18,10 @@
             <view class="search-form radius">
                 <text class="iconfont icon-search padding"/>
                 <input @focus="InputFocus" @blur="InputBlur" :adjust-position="false" type="text" placeholder="请输入单号，客户名称，客户手机号进行查询" confirm-type="search"/>
-            </view>
         </view>
-<!--内容-->
-        <scroll-view class="text-black" enable-back-to-top scroll-y scroll-with-animation :style="styleContentHeight" >
+        </view>
+<!--内容  catchtouchmove="return" -->
+        <scroll-view enable-back-to-top scroll-y scroll-with-animation :style="styleContentHeight" >
            <slot></slot>
         </scroll-view>
     </view>
@@ -51,7 +51,6 @@
                     //100rpx
                     str += " - 100rpx "
                 }
-                console.log(str)
                 return "height: calc(100vh "+str+" - " + this.CustomBar + "px)"
             }
         },

@@ -5,7 +5,7 @@
 				<text class="text-black text-bold">贝业供应链</text>
 			</view>
 		</header-bar>
-		<main-content is-hand="true">
+		<main-content is-hand="false">
 
 		</main-content>
 	</view>

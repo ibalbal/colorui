@@ -66,13 +66,19 @@
 				"navigationBarTitleText": "附件上传",
 				"navigationBarTextStyle": "black"
 			}
+		},{
+			"path": "pages/my/allTaskList",
+			"style": {
+				"navigationBarTitleText": "我的全部任务",
+				"navigationBarTextStyle": "black"
+			}
 		}
 	],
 	"tabBar": {
 		"color": "#7A7E83",
 		"selectedColor": "#1296db",
 		"borderStyle": "white",
-		"backgroundColor": "#ffffff",
+		"backgroundColor": "#464c5b",
 		"list": [{
 			"pagePath": "pages/home/index",
 			"iconPath": "static/tabbar/home.png",

@@ -15,7 +15,7 @@
             <view slot="right">
                 <view class="cu-tag round bg-green">待接单</view>
             </view>
-            <view style="height: inherit"  class="flex flex-direction justify-between">
+            <view style="height: 100%" class="flex flex-direction justify-between">
                 <view>
                     <view class="padding">
                         <uni-table border stripe emptyText="暂无更多数据">
@@ -62,6 +62,38 @@
                         "id": "PS202",
                         "name": "Jeson",
                         "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
+                    },{
+                        "id": "PS202",
+                        "name": "Jeson",
+                        "num": 1
                     }
                 ]
             }
@@ -76,6 +108,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

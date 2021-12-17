@@ -15,7 +15,7 @@
             <view slot="right">
                 <view class="cu-tag round bg-green">待接单</view>
             </view>
-            <view style="height: inherit"  class="flex flex-direction justify-between">
+            <view style="height: 100%"   class="flex flex-direction justify-between">
                 <view>
                     <mk-upload
                             :imgList="imgList"
