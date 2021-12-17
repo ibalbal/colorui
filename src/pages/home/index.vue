@@ -2,10 +2,10 @@
 	<view class="bg-white">
 		<header-bar bgColor="bg-white">
 			<view slot="content">
-				<text class="text-bold">贝业供应链</text>
+				<text class="text-black text-bold">贝业供应链</text>
 			</view>
 		</header-bar>
-		<main-content>
+		<main-content is-hand="true">
 
 		</main-content>
 	</view>

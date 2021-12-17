@@ -2,10 +2,10 @@
     <view class="bg-white">
         <header-bar bgColor="bg-white">
             <view slot="content">
-                <text class="text-bold">贝业供应链</text>
+                <text class="text-black text-bold">贝业供应链</text>
             </view>
         </header-bar>
-        <main-content is-search="true" is-back="true">
+        <main-content is-hand="true" is-search="true" is-back="true">
             <view slot="right">
                 <view class="cu-capsule">
                     <view v-show="false" class='cu-tag'/>

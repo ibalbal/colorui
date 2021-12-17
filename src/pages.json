@@ -48,6 +48,24 @@
 				"navigationBarTitleText": "任务详情",
 				"navigationBarTextStyle": "black"
 			}
+		},{
+			"path": "pages/tasklist/file/fullPageUpload",
+			"style": {
+				"navigationBarTitleText": "整页上传",
+				"navigationBarTextStyle": "black"
+			}
+		},{
+			"path": "pages/tasklist/file/goodsUpload",
+			"style": {
+				"navigationBarTitleText": "商品上传",
+				"navigationBarTextStyle": "black"
+			}
+		},{
+			"path": "pages/tasklist/file/fileUpload",
+			"style": {
+				"navigationBarTitleText": "附件上传",
+				"navigationBarTextStyle": "black"
+			}
 		}
 	],
 	"tabBar": {
