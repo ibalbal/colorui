@@ -18,26 +18,34 @@
             <view style="height: 100%" class="flex flex-direction justify-between">
                 <view>
                     <view class="padding">
-                        <uni-table border stripe emptyText="暂无更多数据">
-                            <!-- 表头行 -->
-                            <uni-tr>
-                                <uni-th align="center">序号</uni-th>
-                                <uni-th align="center">商品ID</uni-th>
-                                <uni-th align="center">商品名称</uni-th>
-                                <uni-th align="center">件数</uni-th>
-                                <uni-th align="center" width="100"></uni-th>
-                            </uni-tr>
-                            <!-- 表格数据行 -->
-                            <uni-tr v-for="(item,index) in detailedData" :key="index">
-                                <uni-td align="center">{{index+1}}</uni-td>
-                                <uni-td align="center">{{item.id}}</uni-td>
-                                <uni-td align="center">{{item.name}}</uni-td>
-                                <uni-td align="center">{{item.num}}</uni-td>
-                                <uni-td align="center">
+                        <view class="cu-list menu sm-border card-menu">
+                            <view class="cu-item">
+                                <view class="">
+                                    <view>
+                                        <text>商品名称</text>
+                                    </view>
+                                    <text>
+                                        <text class="text-grey">件数</text>
+                                    </text>
+                                </view>
+                                <view>
                                     <button @click="goPage" class="cu-btn sm" style="background-color: #464C5B;color: #F0F0F0">上传附件</button>
-                                </uni-td>
-                            </uni-tr>
-                        </uni-table>
+                                </view>
+                            </view>
+                            <view class="cu-item">
+                                <view class="">
+                                    <view>
+                                        <text>商品名称</text>
+                                    </view>
+                                    <text>
+                                        <text class="text-grey">件数</text>
+                                    </text>
+                                </view>
+                                <view>
+                                    <button @click="goPage" class="cu-btn sm" style="background-color: #464C5B;color: #F0F0F0">上传附件</button>
+                                </view>
+                            </view>
+                        </view>
                     </view>
                 </view>
                 <view class="flex justify-center margin-bottom-lg">

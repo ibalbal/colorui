@@ -2384,9 +2384,9 @@ button.cuIcon.lg {
 }
 
 .cu-form-group picker::after {
-	font-family: cuIcon;
+	font-family: iconfont;
 	display: block;
-	content: "\e6a3";
+	content: "\e7eb";
 	position: absolute;
 	font-size: 34upx;
 	color: #8799a3;

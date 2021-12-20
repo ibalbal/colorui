@@ -27,31 +27,33 @@
                 <form>
                     <view class="cu-form-group">
                         <view class="title">服务单号</view>
-                        <input placeholder="" value="PS2021120200001" name="input"></input>
+                        <input disabled placeholder="空" value="PS2021120200001" name="input"></input>
                     </view>
                     <view class="cu-form-group">
                         <view class="title">客户姓名</view>
-                        <input placeholder="" value="周小厨" name="input"></input>
+                        <input disabled placeholder="空" value="周小厨" name="input"></input>
                     </view>
                     <view class="cu-form-group solid-top">
                         <view class="title">手机号</view>
-                        <input placeholder="" value="15521052031" name="input"></input>
+                        <input disabled placeholder="空" value="15521052031" name="input"></input>
                     </view>
                     <view class="cu-form-group">
                         <view class="title">地址</view>
-                        <input placeholder="" value="上海市松江区石湖荡街道闵塔公里1018号上海市松江区石湖荡街道闵塔公里1018号" name="input"></input>
+                        <input disabled placeholder="空" value="上海市松江区石湖荡街道闵塔公里1018号上海市松江区石湖荡街道闵塔公里1018号" name="input"></input>
                     </view>
                     <view class="cu-form-group">
                         <view class="title">备注</view>
                         <input placeholder="" value="轻拿轻放" name="input"></input>
                     </view>
-                    <view class="cu-form-group">
+                    <view class="cu-form-group cu-form-group">
                         <view class="title">总件数</view>
                         <input placeholder="" value="1" name="input"></input>
                     </view>
                     <view class="cu-form-group solid-top">
                         <view class="title">预约上门时间</view>
-                        <input placeholder="" value="2021-12-02  12:00" name="input"></input>
+                        <biaofun-datetime-picker
+                        @change="TimeChange"
+                        ></biaofun-datetime-picker>
                     </view>
                 </form>
                 <view class="bg-white solid-top">
@@ -60,23 +62,27 @@
                             <text class="text-bold">商品明细</text>
                         </view>
                     </view>
-                    <view class="padding-lr padding-bottom-lg">
-                        <uni-table border stripe emptyText="暂无更多数据">
-                            <!-- 表头行 -->
-                            <uni-tr>
-                                <uni-th align="center">序号</uni-th>
-                                <uni-th align="center">商品ID</uni-th>
-                                <uni-th align="center">商品名称</uni-th>
-                                <uni-th align="center">件数</uni-th>
-                            </uni-tr>
-                            <!-- 表格数据行 -->
-                            <uni-tr v-for="(item,index) in detailedData" :key="index">
-                                <uni-td align="center">{{index+1}}</uni-td>
-                                <uni-td align="center">{{item.id}}</uni-td>
-                                <uni-td align="center">{{item.name}}</uni-td>
-                                <uni-td align="center">{{item.num}}</uni-td>
-                            </uni-tr>
-                        </uni-table>
+                    <view class="padding-lr padding-bottom">
+                        <view class="cu-list menu sm-border card-menu">
+                            <view class="cu-item" v-for="(item,index) in detailedData"　:key="index">
+                                <view class="flex">
+                                    <view class="flex justify-center align-center">
+                                        <checkbox @click="selectCheck(index)" style="transform:scale(0.6);" class="checked" :value="item.id"></checkbox>
+                                    </view>
+                                    <view class="margin-left">
+                                        <view>
+                                            <text>{{item.name}}</text>
+                                        </view>
+                                        <text>
+                                            <text class="text-grey">{{item.num}}</text>
+                                        </text>
+                                    </view>
+                                </view>
+                                <view>
+                                    <text>状态</text>
+                                </view>
+                            </view>
+                        </view>
                     </view>
                 </view>
                 <view class="flex justify-center margin-bottom-lg">
@@ -92,25 +98,27 @@
         name: "index",
         data(){
             return{
+                time:'1',
+                checkedArr:[],
                 detailedData:[
                     {
-                        "id": "PS202",
+                        "id": "PS2021",
                         "name": "Jeson",
                         "num": 1
                     },{
-                        "id": "PS202",
+                        "id": "PS2022",
                         "name": "Jeson",
                         "num": 1
                     },{
-                        "id": "PS202",
+                        "id": "PS2023",
                         "name": "Jeson",
                         "num": 1
                     },{
-                        "id": "PS202",
+                        "id": "PS2024",
                         "name": "Jeson",
                         "num": 1
                     },{
-                        "id": "PS202",
+                        "id": "PS2025",
                         "name": "Jeson",
                         "num": 1
                     }
@@ -118,10 +126,24 @@
             }
         },
         methods:{
+            TimeChange(e) {
+                console.log(e);
+            },
             goPage(){
                 uni.navigateTo({
                     url: '/pages/tasklist/file/goodsUpload'
                 });
+            },
+            selectCheck(index){
+                let numberIndex = this.checkedArr.indexOf(index)
+                if(numberIndex === -1){
+                    this.checkedArr.push(index)
+                }else {
+                    this.checkedArr.splice(numberIndex,1)
+                }
+            },
+            test(){
+                console.log("check:",this.checkedArr)
             }
         }
     }

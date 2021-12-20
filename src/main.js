@@ -4,10 +4,7 @@ import headerBar from './pages/components/handerBar'
 import footerBar from "./pages/components/footerBar"
 import mainContent from "./pages/components/mainContent"
 import mkUpload from "./pages/components/mk-upload/mk-upload"
-// import uniTable from "./uni_modules/uni-table/components/uni-table/uni-table"
-// import uniTr from "./uni_modules/uni-table/components/uni-tr/uni-tr"
-// import uniTh from "./uni_modules/uni-table/components/uni-th/uni-th"
-// import uniTd from "./uni_modules/uni-table/components/uni-td/uni-td"
+import BiaofunDatetimePicker from "./components/biaofun-datetime-picker/biaofun-datetime-picker";
 
 Vue.config.productionTip = false
 
@@ -16,10 +13,8 @@ Vue.component('header-bar', headerBar)
 Vue.component('footer-bar',footerBar)
 Vue.component('main-content',mainContent)
 Vue.component('mk-upload', mkUpload)
-// Vue.component('uni-table', uniTable)
-// Vue.component('uni-tr', uniTr)
-// Vue.component('uni-th', uniTh)
-// Vue.component('uni-td', uniTd)
+Vue.component('biaofun-datetime-picker',BiaofunDatetimePicker)
+
 const app = new Vue({
   ...App
 })
